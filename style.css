@@ -1,0 +1,391 @@
+/* Genel Ayarlar */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+    --primary-color: #e50914;
+    --dark-bg: #141414;
+    --card-bg: #181818;
+    --text-color: #fff;
+    --text-muted: #b3b3b3;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0) 100%); /* Gradyanı güçlendirdik */
+    padding: 1rem 2rem;
+    transition: background-color 0.3s;
+}
+
+.navbar.scrolled {
+    background-color: #000;
+}
+
+.navbar-brand {
+    font-weight: 900;
+    color: var(--primary-color) !important;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8); /* Logo gölgesi */
+}
+
+.nav-link {
+    color: #fff !important; /* Linkleri beyaz yaptık */
+    font-weight: 500;
+    transition: color 0.3s;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.8); /* Okunabilirlik için gölge */
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--primary-color) !important;
+}
+
+/* ... Hero Section ... */
+
+/* Kart Tasarımları */
+/* ... */
+
+.card-text.text-muted {
+    color: #ccc !important; /* Kategori rengini açtık */
+}
+
+
+/* Hero Section (Vitrin) */
+.hero-section {
+    position: relative;
+    height: 80vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, var(--dark-bg) 10%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.8) 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    padding-left: 5%;
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.hero-desc {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Butonlar */
+.btn-primary-custom {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-primary-custom:hover {
+    background-color: #f40612;
+    transform: scale(1.05);
+    color: #fff;
+}
+
+.btn-outline-light {
+    border-width: 2px;
+    font-weight: bold;
+    padding: 0.8rem 2rem;
+}
+
+.btn-outline-light:hover {
+    background-color: rgba(255,255,255,0.2);
+    color: #fff;
+}
+
+/* Kart Tasarımları */
+.section-title {
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    padding-left: 10px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.movie-card {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    height: 100%;
+    cursor: pointer;
+    position: relative;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+    z-index: 10;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+}
+
+.movie-card img {
+    height: 350px;
+    object-fit: cover;
+    transition: opacity 0.3s;
+}
+
+.movie-card:hover img {
+    opacity: 0.7;
+}
+
+.card-body {
+    padding: 1.2rem;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #fff;
+}
+
+.badge-imdb {
+    background-color: #f5c518;
+    color: #000;
+    font-weight: 800;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+/* Detay Sayfası */
+.backdrop-container {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    margin-bottom: 2rem;
+    box-shadow: inset 0 -100px 100px var(--dark-bg);
+}
+
+.backdrop-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.85);
+}
+
+.movie-detail-content {
+    position: relative;
+    z-index: 2;
+}
+
+.poster-img {
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-top: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 1px solid #333;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Animasyonlar */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Footer */
+footer {
+    background-color: #000;
+    color: var(--text-muted);
+    padding: 3rem 0;
+    margin-top: auto;
+    text-align: center;
+    font-size: 0.9rem;
+    border-top: 1px solid #333;
+}
+/* Mobil Uyumluluk (Responsive) */
+@media (max-width: 768px) {
+    /* Navbar Tasarımı */
+    .navbar {
+        padding: 1rem !important;
+    }
+
+    .navbar-brand {
+        font-size: 1.4rem;
+    }
+
+    .nav-link {
+        padding: 0.5rem 0;
+    }
+
+    /* Hero Alanı */
+    .hero-section {
+        height: 65vh;
+        margin-bottom: 2rem;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .hero-desc {
+        font-size: 0.9rem;
+        -webkit-line-clamp: 2;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-content {
+        padding-left: 0;
+        text-align: center;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+
+    .hero-content .d-flex {
+        flex-direction: column;
+        gap: 0.8rem !important;
+        align-items: center;
+    }
+
+    .hero-content .btn {
+        width: 80%;
+        padding: 0.7rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    /* Ana İçerik */
+    .main-content {
+        margin-top: 1rem !important;
+        padding: 0 1rem;
+    }
+
+    .section-title {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Film Kartları */
+    .movie-card {
+        margin-bottom: 1rem;
+    }
+
+    .movie-card img {
+        height: 250px;
+        width: 100%;
+    }
+
+    .card-body {
+        padding: 0.8rem;
+    }
+
+    .card-title {
+        font-size: 0.9rem;
+    }
+
+    .card-text {
+        font-size: 0.8rem;
+    }
+
+    /* Detay Sayfası */
+    .backdrop-container {
+        padding: 60px 0;
+    }
+
+    .movie-detail-content {
+        padding: 0 1rem;
+    }
+
+    .poster-img {
+        margin-bottom: 1rem;
+        max-width: 100%;
+    }
+
+    .display-5 {
+        font-size: 1.5rem;
+    }
+
+    /* Footer */
+    footer {
+        padding: 2rem 0;
+        font-size: 0.8rem;
+    }
+}
+
+/* Orta Boy Ekranlar (tablet) */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .movie-card img {
+        height: 280px;
+    }
+}
+
